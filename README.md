@@ -1,158 +1,178 @@
 # Dr. Zhang's Happy Farm
 
-## Problem Statement
+A simple pet health check and membership prototype built with Next.js.
 
-This project addresses the business opportunity of transforming AI-assisted health screening into a practical pet healthcare and longevity platform. The original research direction focused on AI-driven early diabetes prediction and interpretability analysis (XAI). This prototype migrates that technology into the pet healthcare and longevity sector to create a practical business model that is commercially useful and scientifically credible.
+## What this project does
 
-The goal is to attract pet owners to provide health and lifestyle data through the "Dr. Zhang's Professional AI Health Check," convert them into free members, unlock a simple report to build trust, and then guide them into a paid membership for deeper breed-aware risk prediction and prevention planning. At the same time, the platform supports precise promotion of functional pet supplements from "Dr. Zhang's Happy Farm," creating a complete loop from health data collection to product recommendation and subscription conversion.
+This project is a front-end prototype for a pet health platform. A user can:
 
-The business model is designed as a freemium ecosystem:
+- fill out a health check form for their pet
+- create a member profile from owner details
+- receive a free basic health report
+- upgrade to a paid tier for deeper insights
+- see breed-based risk information
+- view product recommendations
+- read the short academic/marketing brief
 
-- Free users submit health information and receive a basic screening report.
-- The system automatically creates a member profile tied to the owner’s mobile number, email address, or Line ID.
-- The basic report attracts pet owners to continue using the platform.
-- Paid members unlock deeper AI-driven breed prediction and prevention advice.
-- The product recommendation engine connects risk factors such as obesity, metabolic issues, joint problems, and coat health to relevant functional pet products.
-- The platform also creates a scientific and marketing foundation for academic papers, conferences, and product credibility.
+## Live demo
 
-This system is not just a static website. It is a prototype business loop that simulates the complete customer journey from assessment to report generation, paid upgrade, and product conversion.
+You can also check the project online here:
 
-## Objective
+```text
+https://petcheckhealth.netlify.app
+```
 
-Build a micro-web prototype system that realizes the complete business process from:
+This free deployment lets you view the prototype without running it locally.
 
-- health check form filling,
-- creation of a free member file,
-- unlocking of a simple report,
-- upgrade to a paid member,
-- unlocking of an in-depth breed prediction report,
-- and precise recommendation of Happy Farm products.
+## Requirements before running
 
-The prototype should behave like a realistic pet wellness funnel and show how health data can be transformed into commercial value, product sales, and paid membership conversion.
+Make sure you have installed:
 
-## Core Requirements
+- Node.js 18 or newer
+- npm (comes with Node.js)
 
-### A. Pet health assessment form and automatic membership mechanism
+## Step-by-step: run the project
 
-Create a mobile-friendly questionnaire page using React.js / Next.js.
+### 1. Open terminal in the project folder
 
-Required features:
+Go to the project folder:
 
-- Owner identification fields: owner name, mobile phone, email, and Line ID.
-- Any one of these contact fields can be used as a member unique identifier for binding or quick file creation.
-- Pet health section includes:
-  - pet type: dog or cat
-  - breed: such as Corgi, Shiba Inu, Persian cat
-  - age
-  - body condition score (BCS)
-  - dietary habits
-- CRM accumulation: after submission, the system must automatically create a free member profile for the owner’s mobile phone number, email address, or Line ID.
-- The free member profile should be associated with the pet’s characteristic tags such as breed, pet type, activity level, dietary habit, and BCS.
+```bash
+cd "C:\Users\admin\Desktop\project\dr-zhang-happy-farm"
+```
 
-### B. Two-tiered AI health check report (Freemium mechanism)
+If you are in a different folder, first go there and then run the next commands.
 
-#### Tier 1: Free Membership - Simple Health Report
+### 2. Install dependencies
 
-- Unlocked immediately after binding the member ID through phone, email, or Line ID.
-- Displays the pet’s current basal metabolic rate (BMR).
-- Displays obesity index.
-- Displays current health risk score.
-- Provides basic health screening results and risk signals.
-
-#### Tier 2: Paid Membership - In-depth Breed Prediction and Prevention Plan
-
-- Includes a paywall / upgrade prompt.
-- After upgrade to paid membership, the system should combine the pet’s breed and physiological characteristics.
-- The report should provide deeper breed-specific warnings, such as:
-  - Corgi risk of intervertebral disc degeneration
-  - Persian cat risk of chronic kidney disease or urinary strain
-  - specific cat breeds risk of cardiomyopathy
-- The platform should provide a veterinarian-level daily prevention plan tailored to the pet’s breed and health status.
-
-### C. Precise Product Recommendation Module
-
-Based on the risk factors identified by the rapid screening, the platform should dynamically recommend related functional pet products from "Dr. Zhang's Happy Farm."
-
-Examples of risk-driven product recommendations include:
-
-- obesity or metabolic issues → low-fat functional formula
-- joint or mobility concerns → pet egg roll or mobility-support product
-- coat or skin health issues → functional lecithin egg products
-
-Requirements:
-
-- Product recommendations should appear below the report.
-- Product cards should describe the intended health benefit.
-- Each product should include an "Exclusive Discount Purchase" button.
-- Use traffic redirection and click tracking parameters to simulate purchase traffic and conversion tracking.
-
-### D. Academic and Marketing Report Summary (One-page Brief)
-
-Write a one-page abstract that explains how to use the pet health big data accumulated on the platform to produce:
-
-- academic journal papers,
-- conference research outputs,
-- professional scientific research endorsement,
-- and evidence-based marketing support for "Dr. Zhang's Happy Farm."
-
-The brief should explain how the platform can support:
-
-- product credibility,
-- scientific research validation,
-- premium membership conversion,
-- and pet product sales growth.
-
-This summary should demonstrate how data, research, and marketing can be fused into one scientific-business loop.
-
-## Prototype Scope
-
-This project implements a front-end prototype of the system using Next.js and local browser storage to simulate CRM/member creation and premium access logic.
-
-The prototype covers:
-
-- health questionnaire UI,
-- free member profile generation,
-- free report screen,
-- premium unlock paywall logic,
-- breed-based risk interpretation,
-- product recommendations,
-- and an academic summary page.
-
-## Run the Project
-
-From the project folder, run:
+Run:
 
 ```bash
 npm install
+```
+
+This will install all required packages for the app.
+
+### 3. Start the app
+
+Run:
+
+```bash
 npm run dev
 ```
 
-Then open the app in the browser:
+### 4. Open the app in the browser
+
+After the server starts, open:
 
 ```text
 http://localhost:3000
 ```
 
-If port 3000 is occupied, Next.js may use another available port automatically.
+If port 3000 is already busy, Next.js will usually choose another available port and show the correct URL in the terminal.
 
-## Project Structure
+### 5. Stop the app
 
-- app/page.tsx — landing page
-- app/health-check/page.tsx — pet questionnaire and member creation flow
-- app/report/page.tsx — free report and premium upgrade screen
-- app/brief/page.tsx — academic/marketing one-page summary
-- app/lib/pet-health.ts — membership, CRM, risk, and recommendation logic
+Press:
 
-## Deliverable Outcome
+```text
+Ctrl + C
+```
 
-This prototype demonstrates a complete business loop from:
+in the terminal to stop the running project.
 
-- health check data input,
-- free member acquisition,
-- simple report delivery,
-- paid member upgrade,
-- deep risk prediction,
-- product recommendation,
-- and evidence-backed marketing content.
+## Useful commands
 
-It fulfills the intended business model for a pet healthcare and longevity platform while providing a realistic, visually credible micro-web product prototype.
+### Run production build
+
+```bash
+npm run build
+```
+
+### Run production server after building
+
+```bash
+npm run start
+```
+
+## Common problems and fixes
+
+### Problem: "npm is not recognized"
+
+Install Node.js and restart the terminal.
+
+### Problem: project not starting
+
+Make sure you are inside the project folder before running the commands.
+
+### Problem: port already in use
+
+Close the old server or start the app again. Next.js will usually show the new port in the terminal.
+
+### Problem: modules are missing
+
+Run:
+
+```bash
+npm install
+```
+
+## Project structure
+
+This project is organized in a simple and easy-to-understand structure:
+
+```text
+dr-zhang-happy-farm/
+├── app/
+│   ├── globals.css            # global styling and layout design
+│   ├── layout.tsx             # app layout and page wrapper
+│   ├── page.tsx               # homepage / landing page
+│   ├── health-check/
+│   │   └── page.tsx           # pet health form and member creation flow
+│   ├── report/
+│   │   └── page.tsx           # free report + paid upgrade screen
+│   ├── brief/
+│   │   └── page.tsx           # academic and marketing brief page
+│   └── lib/
+│       └── pet-health.ts      # health scoring, membership logic, and recommendations
+├── public/                    # static assets and images
+├── package.json               # project scripts and dependencies
+├── next.config.ts             # Next.js configuration
+├── tsconfig.json              # TypeScript configuration
+├── postcss.config.mjs         # CSS/PostCSS config
+├── eslint.config.mjs          # linting rules
+├── README.md                  # project documentation
+└── .gitignore                 # ignored files for Git
+```
+
+### Simple explanation of each folder
+
+- app/ — main website pages
+- app/health-check/ — where the user fills the pet health questionnaire
+- app/report/ — where the result and premium upgrade page appear
+- app/brief/ — where the business/academic summary is shown
+- app/lib/ — logic for health calculations and recommendations
+- public/ — assets used by the website
+- package.json — commands like `npm run dev`, `npm run build`
+
+## Notes
+
+This project is a prototype and uses browser local storage to simulate member records and premium access.
+
+It is made for demo and concept presentation, not for a live production backend.
+
+## Summary
+
+For a first-time user, the full run process is:
+
+```bash
+cd "C:\Users\admin\Desktop\project\dr-zhang-happy-farm"
+npm install
+npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
