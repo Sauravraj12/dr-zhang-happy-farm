@@ -38,7 +38,7 @@ Make sure you have installed:
 Go to the project folder:
 
 ```bash
-cd "C:\Users\admin\Desktop\project\dr-zhang-happy-farm"
+https://github.com/Sauravraj12/dr-zhang-happy-farm
 ```
 
 If you are in a different folder, first go there and then run the next commands.
