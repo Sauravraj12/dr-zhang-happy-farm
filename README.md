@@ -1,6 +1,6 @@
 # Dr. Zhang's Happy Farm
 
-A simple pet health check and membership prototype built with Next.js.
+Dr. Zhang's Happy Farm is an AI-ready pet health and membership platform prototype built with Next.js. It allows pet owners to complete a health assessment, generate a basic health report, view breed-based risk information, explore personalized product recommendations, and access premium health insights through a membership flow.
 
 ## What this project does
 
