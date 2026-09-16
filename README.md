@@ -155,24 +155,6 @@ dr-zhang-happy-farm/
 - public/ — assets used by the website
 - package.json — commands like `npm run dev`, `npm run build`
 
-## Notes
 
-This project is a prototype and uses browser local storage to simulate member records and premium access.
 
-It is made for demo and concept presentation, not for a live production backend.
 
-## Summary
-
-For a first-time user, the full run process is:
-
-```bash
-cd "C:\Users\admin\Desktop\project\dr-zhang-happy-farm"
-npm install
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
