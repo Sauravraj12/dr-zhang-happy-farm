@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const emphasisPoints = [
   {
@@ -20,15 +23,17 @@ const emphasisPoints = [
 ];
 
 export default function BriefPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800">
       <header className="border-b bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <Link href="/" className="font-bold text-slate-900">
             Dr. Zhang&apos;s Happy Farm
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Link
               href="/"
               className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
@@ -42,7 +47,43 @@ export default function BriefPage() {
               Start Health Check
             </Link>
           </div>
+
+          <button
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-50 md:hidden"
+          >
+            <span className="sr-only">Open menu</span>
+            <div className="flex w-5 flex-col gap-1.5">
+              <span className="block h-0.5 rounded-full bg-current" />
+              <span className="block h-0.5 rounded-full bg-current" />
+              <span className="block h-0.5 rounded-full bg-current" />
+            </div>
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="border-t bg-white md:hidden">
+            <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3">
+              <Link
+                href="/"
+                className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/health-check"
+                className="rounded-xl bg-green-600 px-4 py-3 text-sm font-semibold text-white hover:bg-green-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Start Health Check
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       <div className="px-6 py-10">

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const steps = [
   {
@@ -24,16 +27,18 @@ const steps = [
 ];
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <nav className="border-b bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           <div>
-            <h1 className="text-xl font-bold">Dr. Zhang&apos;s Happy Farm</h1>
-            <p className="text-xs text-slate-500">Smart Pet Health & Wellness</p>
+            <h1 className="text-lg font-bold sm:text-xl">Dr. Zhang&apos;s Happy Farm</h1>
+            <p className="text-[11px] text-slate-500 sm:text-xs">Smart Pet Health & Wellness</p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Link href="/brief" className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
               Academic Brief
             </Link>
@@ -41,7 +46,43 @@ export default function Home() {
               Start Health Check
             </Link>
           </div>
+
+          <button
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-50 md:hidden"
+          >
+            <span className="sr-only">Open menu</span>
+            <div className="flex w-5 flex-col gap-1.5">
+              <span className="block h-0.5 rounded-full bg-current" />
+              <span className="block h-0.5 rounded-full bg-current" />
+              <span className="block h-0.5 rounded-full bg-current" />
+            </div>
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="border-t bg-white md:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3">
+              <Link
+                href="/brief"
+                className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Academic Brief
+              </Link>
+              <Link
+                href="/health-check"
+                className="rounded-xl bg-green-600 px-4 py-3 text-sm font-semibold text-white hover:bg-green-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Start Health Check
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="bg-gradient-to-b from-green-50 to-white">
