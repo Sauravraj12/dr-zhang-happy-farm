@@ -29,9 +29,14 @@ export default function BriefPage() {
     <main className="min-h-screen bg-slate-50 text-slate-800">
       <header className="border-b bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <Link href="/" className="font-bold text-slate-900">
-            Dr. Zhang&apos;s Happy Farm
-          </Link>
+          <div>
+            <Link href="/" className="block font-bold text-slate-900">
+              Dr. Zhang&apos;s Happy Farm
+            </Link>
+            <p className="text-[9px] font-medium lowercase tracking-[0.12em] text-slate-500">
+              smart pet health & wellness
+            </p>
+          </div>
 
           <div className="hidden items-center gap-3 md:flex">
             <Link
@@ -150,6 +155,51 @@ export default function BriefPage() {
           </div>
         </div>
       </div>
+
+      <footer className="mt-16 border-t border-slate-200 bg-slate-950 text-slate-200">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.8fr_1fr]">
+          <div className="max-w-md">
+            <h3 className="text-xl font-bold text-white">Dr. Zhang&apos;s Happy Farm</h3>
+            <p className="mt-2 text-[9px] font-medium lowercase tracking-[0.16em] text-green-300">
+              smart pet health & wellness
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Smart pet health screening and wellness guidance built around preventive care, evidence-based insights, and better owner decisions.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.22em] text-green-300">Quick Links</h4>
+            <ul className="mt-4 space-y-3 text-sm text-slate-300">
+              <li>
+                <Link href="/" className="transition hover:text-white">Home</Link>
+              </li>
+              <li>
+                <Link href="/brief" className="transition hover:text-white">Academic Brief</Link>
+              </li>
+              <li>
+                <Link href="/health-check" className="transition hover:text-white">Health Check</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.22em] text-green-300">Contact</h4>
+            <ul className="mt-4 space-y-3 text-sm text-slate-300">
+              <li>Email: hello@happyfarm.pet</li>
+              <li>Support: 24/7 pet wellness guidance</li>
+              <li>Location: Digital-first care platform</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-800">
+          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+            <p>© 2026 Dr. Zhang&apos;s Happy Farm</p>
+            <p>AI screening for informational purposes only.</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
